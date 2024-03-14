@@ -36,6 +36,10 @@ let userEvenOrOdd = prompt("Scegli pari o dispari");
 // now we ask him to pick a number between 1 and 5:
 let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
 
+// this function determines if the number is even:
+function isEven (number) {
+    return number % 2 === 0;
+}
 
 
 // this is our randomizer function:
