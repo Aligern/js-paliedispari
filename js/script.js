@@ -36,13 +36,51 @@ let userEvenOrOdd = prompt("Scegli pari o dispari");
 // now we ask him to pick a number between 1 and 5:
 let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
 
+
+
 // this function determines if the number is even:
 function isEven (number) {
-    return number % 2 === 0;
+    let isEven = number % 2 === 0;
+    console.log(isEven);
+    return isEven;
 }
+
+
+function playEvenOrOdd (userEvenOrOdd, userNumber) {
+    // we generate the number for the machine:
+    let randomNum = getRndInteger(1,5);
+    console.log(randomNum, "scelta dell'IA");
+    // here we do the sum between the user chosen number and the AI one:
+    let sum = userNumber + randomNum;
+    console.log(`la somma dei numeri è : ${sum}`);
+    let sumEven = isEven(sum);
+
+    // let's determine if who's the winner:
+    let result;
+    if (userEvenOrOdd === "pari" && sumEven || (userEvenOrOdd === "dispari" && !sumEven)) {
+        result = "Complimenti! hai vinto!";
+    }   else {
+        result = "Spiacente, hai perso!";
+    }
+    return result;
+};
+
+// we check if the user give us the right prompts:
+
+// first we make sure that the user use the proper input on the first one of the game by making him choise between even('pari') or odd('dispari'):
+if (userEvenOrOdd !== "pari" && userEvenOrOdd !== "dispari") {
+    console.log("La scelta non è valida. Per favore inserisci 'pari' o 'dispari'.");
+    // now we check if the user puts a number between 1 and 5 and we also make sure that he puts a number by using 'isNaN':
+} else if (userNumber < 1 || userNumber > 5 || isNaN(userNumber)) {
+    console.log ("Numero non valido. Inserisci un numero fra 1 e 5.");
+    // if the user give the right prompts we just show the game results by assigning to a variable our game function:
+} else {
+    let gameResult = playEvenOrOdd(userEvenOrOdd, userNumber);
+    console.log(gameResult);
+};
 
 
 // this is our randomizer function:
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
+};
