@@ -20,10 +20,16 @@ function palindrome (word) {
     word = word.toLowerCase();
     // we check the lenght of our word:
     const len = word.length;
-
     // now we split the word in 2 then compare the first half with the second one:
     for (let i = 0; i < len / 2; i++) {
-        if (word[i]) !== word[len ]
+        // we do a comparison between the two half of our word:
+        if (word[i] !== word[len - 1 - i]) {
+            // if at least one character is different from the first half of the word then the given word is not palindrome, so:
+            return false;
+        }
     }
-
+    // when our if results in two identical halves then:
+    return true;
 };
+console.log(palindrome(phrase));
+
