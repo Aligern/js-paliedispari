@@ -55,7 +55,7 @@ function playEvenOrOdd (userEvenOrOdd, userNumber) {
     console.log(`la somma dei numeri è : ${sum}`);
     let sumEven = isEven(sum);
 
-    // let's determine if who's the winner:
+    // let's determine who's the winner:
     let result;
     if (userEvenOrOdd === "pari" && sumEven || (userEvenOrOdd === "dispari" && !sumEven)) {
         result = "Complimenti! hai vinto!";
