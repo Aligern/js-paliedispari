@@ -2,15 +2,6 @@
 // Palindrome
 // We ask the user to give us a word, then we need to create a function to see if it is palindrome
 
-
-// Odd or Even
-// then the user choose odd or even and give us a number between 1 and 5.
-// we generate a random number (always between 1 a 5) with another function.
-// we sum the two numbers
-// we need to check if the sum is odd or even with a function.
-// then we print who the winner is.
-
-
 // here we ask the user the prompt we need:
 let phrase = prompt("inserisci una parola");
 
@@ -33,3 +24,21 @@ function palindrome (word) {
 };
 console.log(palindrome(phrase));
 
+// Odd or Even
+// then the user choose odd or even and give us a number between 1 and 5.
+// we generate a random number (always between 1 a 5) with another function.
+// we sum the two numbers
+// we need to check if the sum is odd or even with a function.
+// then we print who the winner is.
+
+// we ask the user to choose between even or odd:
+let userEvenOrOdd = prompt("Scegli pari o dispari");
+// now we ask him to pick a number between 1 and 5:
+let userNumber = parseInt(prompt("inserisci un numero da 1 a 5"));
+
+
+
+// this is our randomizer function:
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
